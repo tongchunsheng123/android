@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="img/tab_renwu_n.png" alt="">
+    <img src="img/tab_shouye_n.png" alt="">
+</body>
+
+</html>
+<script>
+    var oImg = document.querySelectorAll("img");
+    for (var i = 0; i < oImg.length; i++) {
+        oImg[i].onclick = function () {
+            console.log(111);
+            if(this.src.match('_n.png')){
+               for(let j=0;j<oImg.length;j++){
+                oImg[j].src = oImg[j].src.replace("_p.png","_n.png")
+               }
+               this.src = this.src.replace('_n.png','_p.png');
+            }
+        }
+    }
+
+</script>
