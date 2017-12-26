@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="box">图书<br>
+    <input type="checkbox" name="box">动漫<br>
+    <input type="checkbox" name="box">游戏
+    <input type="button" value="全选" onclick = xuanze()>
+</body>
+</html>
+<script>
+    var Name = document.getElementsByName("box");
+    console.log(Name);
+    flag = false;
+    function xuanze(){
+        flag = !flag;
+        for(let i=0;i<Name.length;i++){
+           Name[i].checked = flag;
+        }
+    }
+</script>
