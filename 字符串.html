@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var x = "you are \"name\"";
+    var d = x.indexOf("a",2)
+    console.log(x);
+    console.log(d);
+    var y = "nslncnbknncjknsjkn"
+    // console.log(y.slice(0,y.indexOf('b')))
+    console.log(y.slice(y.indexOf('b'),(y.length)))
+    
+
+    // 截取字符串
+    var c = y.substr(y.indexOf('b'),6);
+    var m = y.substring(3,6);
+    console.log(c)
+    console.log(y);
+    console.log(m)
+    // 数组去重；
+    // 1.
+    var list= [1,2,3,5,6,7,4,2,3,4];
+    // var obj = {}
+    // for(let i=0;i<list.length;i++){
+    //    obj[list[i]] = true;
+    // }
+    // console.log(obj);
+    var list2=[];
+    // for(var i in obj){
+    //     console.log(i);
+    //    list2[list2.length]= i
+    // }
+//    2.
+    for(let i=0;i<list.length;i++){
+       var k = list.indexOf(list[i]);
+       var h = list.lastIndexOf(list[i])
+      if(k == h){
+        list2[list2.length]= list[i];
+      }else{
+        list[i] = ""
+      }
+     
+    }
+    console.log(list2);
+    // 3.
+    // for(let i=0;i<list.length;i++){
+    //    var k = list2.indexOf(list[i]);
+    //   if(k=='-1'){
+    //     list2[list2.length]= list[i];
+    //   }
+     
+    // }
+    // console.log(list2);
+   
+</script>
