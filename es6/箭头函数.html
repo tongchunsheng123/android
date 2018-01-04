@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  var a = [];
+  for (var i = 0; i < 10; i++) {
+    a[i] = function () {
+      console.log(i);
+    };
+  }
+  a[6](); 
+
+  for (let codePoint of 'foo') {
+  console.log(codePoint)
+}
+function add(x,y){
+  return x+y;
+}
+ console.log(add(1,2));
+//  交换变量值
+ let x=1;
+ let y = 2;
+ [x,y] = [y,x]
+ console.log(x,y);
+//  返回多个值
+ function example(){
+   return[1,2,3]
+ }
+ let list = [a,b,c] = example()
+console.log(list);
+// es6字符串拼接
+let name = "tong",age = "18"
+console.log(`my name ${name},age is ${age}`)
+// 箭头函数
+var add = (num1,num2)=>num1+num2;
+console.log(add(1,2))
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .wrapper{
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            width: 1000px;
+            height: 100%;
+            margin: auto;
+            background: lightgrey;
+        }
+        .nav{
+            width: 100%;
+            height: 60px;
+            background: #000;
+            display: -webkit-flex;
+            justify-content: center;
+            align-content: center;
+            
+        }
+        .nav li{
+            line-height: 60px;
+            color:#fff;
+            width: 25%;
+            text-align: center;
+        }
+        .tab{
+          width: 100%;
+          height:calc(100% - 60px);
+          overflow: hidden;
+        }
+        .tab>div{
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .tab>div:nth-child(1){
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <ul class="nav">
+                <li onclick="tab('tab1')">新闻</li>
+                <li onclick="tab('tab2')">歌曲</li>
+                <li onclick="tab('tab3')">游戏</li>
+                <li onclick="tab('tab4')">音乐</li>
+            </ul>
+            <div class="tab">
+                <div id="tab1">内容一</div>
+                <div id="tab2">内容二</div>
+                <div id="tab3">内容三</div>
+                <div id="tab4">内容四</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function tab(pid){
+        var tabs=["tab1","tab2","tab3","tab4"];
+        for(let i=0;i<tabs.length;i++){
+           if(tabs[i] == pid ){
+            document.getElementById(tabs[i]).style.display="block";
+           }else{
+            document.getElementById(tabs[i]).style.display="none";   
+           }
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="获取验证码" id="timer">
+</body>
+
+</html>
+<script>
+    var oInput = document.getElementById("timer");
+    console.log(oInput);
+    var flag = true;
+    oInput.onclick = function () {
+        if (!flag) {
+            return;
+        }
+        flag = false;
+        console.log(111);
+        var Timer = 5;
+        var Timer1 = setInterval(function () {
+            if (Timer > 0) {
+                Timer--;
+                oInput.value = ("剩余时间" + Timer);
+
+            } else {
+                clearInterval(Timer1)
+                flag = true;
+                oInput.value = ("获取验证码");
+            }
+
+        }, 1000)
+    }
+
+</script>

@@ -11,16 +11,11 @@
 </body>
 </html>
 <script>
-    // 方法1
-    var x=[12,15,13,2,3,5,8,79,45,32];
-    // var a = x[0]
-    // for(let i=0;i<x.length;i++){
-    //     if(a < x[i]){
-    //       a = x[i];
-    //     }
-    // }
-    // console.log(a);
-    // 方法2
-//    var m = Math.max.apply(Math,x);
-//     console.log(m);
+    function person(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    sister = new person("xiaolin","23","女");
+    document.write("她的名字"+sister.name)
 </script>

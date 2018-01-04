@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: rgb(255, 0, 76);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="num"></div>
+
+</body>
+
+</html>
+<script>
+    var Num = document.getElementById("num");
+    // function movediv(){
+    //    Num.innerHTML="鼠标移入"
+    //    Num.style.background="red"
+    // }
+    // function outdiv(){
+    //    Num.innerHTML="鼠标移出"
+    //    Num.style.background="blue"
+    // }
+    // 元素拖拽
+    var disx = 0;
+    var disy = 0;
+    Num.onmousedown = function (ev) {
+        ev = ev || event;
+        disx = ev.clientX - Num.offsetLeft;
+        disy = ev.clientY - Num.offsetTop;
+        document.onmousemove = function (ev) {
+            ev = ev || event;
+            var x = ev.clientX - disx;
+            var y = ev.clientY - disy;
+            if (x < 0) {
+                x = 0
+            }
+            if (y < 0) {
+                y = 0
+            }
+            if (x > (document.documentElement.clientWidth - Num.offsetWidth)) {
+                x = document.documentElement.clientWidth - Num.offsetWidth
+            }
+            if (y > (document.documentElement.clientHeight - Num.offsetHeight)) {
+                y = document.documentElement.clientHeight - Num.offsetHeight
+            }
+            Num.style.left = x + "px";
+            Num.style.top = y + "px";
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>
